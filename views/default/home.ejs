@@ -1,5 +1,15 @@
 <%- include("../partials/header") -%>
 
-<h1>Welcome</h1>
+        <h1>Series Tool</h1>
+        <div id="images" class="row" data-loaded="products">
+            <% imageList.forEach(image => { %>
+                <div class="col-sm col-md-4">
+                    <div class="thumbnail">
+                        <img src="<%= path %>/<%= image %>" alt="<%= image %>">
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
 
 <%- include("../partials/footer") -%>
