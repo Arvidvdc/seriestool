@@ -1,7 +1,7 @@
 
 // Adding new serie
 exports.new = (req,res) => {
-    res.send("Serie toevoegen get.")
+    res.render("./series/new", {page: "addSerie"});
 }
 
 exports.new_post = (req,res) => {
