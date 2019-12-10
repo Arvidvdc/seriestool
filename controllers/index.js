@@ -6,7 +6,7 @@ exports.default = (req,res)=>{
     let server="http://" + process.env.APP_IP + ":" + process.env.APP_PORT + "/" + path
         fs.readdir(path,(err,imageList)=> {
         if(!err){
-            res.render("./default/home",{path: "/images", imageList: imageList});
+            res.render("./default/home",{path: "/images", imageList: imageList, page: "home"});
         } else {
             console.log("Error");
             res.send("Error" + err)
