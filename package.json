@@ -1,0 +1,37 @@
+{
+  "name": "seriestool",
+  "version": "5.0.0",
+  "description": "Web version of my seriestool.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arvidvdc/seriestool.git"
+  },
+  "author": "Arvid van de Crommert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arvidvdc/seriestool/issues"
+  },
+  "homepage": "https://github.com/Arvidvdc/seriestool#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.8.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "supertest": "^4.0.2"
+  }
+}
