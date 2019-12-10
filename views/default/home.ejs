@@ -7,6 +7,9 @@
                     <div class="thumbnail">
                         <img src="<%= path %>/<%= image %>" alt="<%= image %>">
                     </div>
+                    <div class="caption">
+                        <h5><%= image.split(".",1) %></h5>
+                    </div>
                 </div>
             <% }); %>
         </div>
