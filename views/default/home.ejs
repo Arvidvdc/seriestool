@@ -1,6 +1,8 @@
 <%- include("../partials/header") -%>
 
-        <h1>Series Tool</h1>
+        <div class="module-header">
+            <h4 class="module-title">Series overzicht</h4>
+        </div>
         <div id="images" class="row" data-loaded="products">
             <% imageList.forEach(image => { %>
                 <div class="col-sm col-md-4">
@@ -13,6 +15,5 @@
                 </div>
             <% }); %>
         </div>
-
 
 <%- include("../partials/footer") -%>

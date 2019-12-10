@@ -1,3 +1,9 @@
+.container {
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.25),
+    0 8px 16px -8px rgba(0,0,0,.3),
+    0 -6px 16px -6px rgba(0,0,0,.025);
+}
+
 /* Items on home.ejs */
 .thumbnail img {
     width: 100%;
@@ -6,4 +12,35 @@
 .thumbnail {
     padding: 0;
     margin: 10px 0;
+}
+
+/* Titles */
+.module-header {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 15px 0;
+}
+
+.module-title {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 5px;
+    padding: 0 30px 0 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.module-title:after{
+    content: "";
+    display: block;
+    height: 6px;
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    width: 1920px;
+    left: 100%;
+    background: #161616
 }
