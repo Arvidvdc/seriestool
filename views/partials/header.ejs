@@ -22,8 +22,8 @@
                 <li class="nav-item  <%= typeof page !== 'undefined' && page === 'home' ? 'active' : '' %>">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Nieuwe link</a>
+                <li class="nav-item <%= typeof page !== 'undefined' && page === 'addSerie' ? 'active' : '' %>">
+                    <a class="nav-link" href="/serie/add">Serie toevoegen</a>
                 </li>
             </ul>
 
