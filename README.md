@@ -8,6 +8,9 @@ MEN-stack
 
 Supported by Bootstrap v. 4.4.1 and jQuery v 3.4.1.
 
+## Link
+Although this app just saw its first bytes and needs a lot nurturing, but a impression is [here](http://85.150.72.244:3666) available.
+
 ## Features
 ##### 11-12-2019
 * Gallery with images from all my collected series.
