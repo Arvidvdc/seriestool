@@ -1,7 +1,18 @@
 # Seriestool
-Webversion of my series tool. Version 5.x
+Web version of my series tool. Version 5.x
 
-To keep my television series up-to-date and keeping track of the current episode, I've created a tool wich I'm converting to an web application.
+To keep my television series up-to-date and keeping track of the current episode, I've created a tool witch I'm converting to an web application.
 
 ## Stack
 MEN-stack
+
+Supported by Bootstrap v. 4.4.1 and jQuery v 3.4.1.
+
+## Features
+##### 11-12-2019
+* Gallery with images from all my collected series.
+    * @ this moment only images without an database connection.
+    * @ this moment non functional.
+* Adding new series to the database.
+    * @ this moment non functional.
+* Basic styling.
