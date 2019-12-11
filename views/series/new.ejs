@@ -1,12 +1,71 @@
 <%- include("../partials/header") -%>
-<link rel="stylesheet" href="../css/main.css">
 
         <div class="module-header">
             <h4 class="module-title">Serie toevoegen</h4>
         </div>
         
         <form action="/series/new" method="post">
-            <input type="submit" value="Toevoegen">
+            <!-- Title -->
+            <div class="row justify-content-around">
+                <div class="col-sm-3 col-md-3 align-self-center">
+                    <label for="title">Titel van de serie<span class="required">*</span>:</label>
+                </div>
+                <div class="col-sm-8 col-md-8">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="title" placeholder="Titel van de serie" required>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-md-1 d-flex justify-content-end align-self-center">
+                    <div class="form-group">
+                        <input class="btn btn-outline-primary btn-block" type="button" value="zoeken" disabled>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row justify-content-between">
+                <!-- Registerd in Kodi -->
+                <div class="col-auto align-self-center">
+                    <label for="registredInKodi">In Kodi:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input type="checkbox" name="registredInKodi">
+                </div>                
+                <!-- Seen all episodes -->
+                <div class="col-auto align-self-center">
+                    <label for="seenAllEpisodes">Alles gekeken:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input type="checkbox" name="seenAllEpisodes">
+                </div>
+            </div>
+            <!-- Plot -->
+            <div class="row ">
+                <div class="col">
+                    <label for="plot">Plot:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <textarea class="form-control" name="plot" cols="15" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Legend -->
+            <div class="row">
+                <div class="col d-flex justify-content-end">
+                    <span class="required"><small>*) = verplicht veld</small></span>
+                </div>
+            </div>
+            <!-- Buttons -->
+            <div class="row justify-content-between">
+                <div class="col">
+                    <input class="btn btn-outline-primary btn-sm" type="reset" value="Herstellen">
+                </div>
+                <div class="col d-flex justify-content-end">
+                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Toevoegen">
+                    </div>
+                </div>
         </form>
 
 <%- include("../partials/footer") -%>
