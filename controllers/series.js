@@ -1,7 +1,8 @@
 
 // Adding new serie
+let css="../css/main.css"
 exports.new = (req,res) => {
-    res.render("./series/new", {page: "addSerie"});
+    res.render("./series/new", {page: "addSerie", css: css});
 }
 
 exports.new_post = (req,res) => {
