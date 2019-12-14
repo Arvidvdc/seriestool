@@ -1,183 +1,239 @@
 <%- include("../partials/header") -%>
 
-        <div class="module-header">
-            <h4 class="module-title">Serie toevoegen</h4>
+<div class="module-header">
+    <h4 class="module-title">Serie toevoegen</h4>
+</div>
+
+<form action="/series/new" method="post">
+
+    <div class="accordion" id="series">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Serie details
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#series">
+                <div class="card-body">
+                    <!-- Title -->
+                    <div class="row justify-content-around">
+                        <div class="col-sm-3 col-md-3 align-self-center">
+                            <label for="title">Titel van de serie<span class="required">*</span>:</label>
+                        </div>
+                        <div class="col-sm-8 col-md-8">
+                            <input class="form-control" type="text" name="title" placeholder="Titel van de serie"
+                                required>
+                        </div>
+                        <div class="col-sm-1 col-md-1 d-flex justify-content-end align-self-center">
+                            <div class="form-group">
+                                <input class="btn btn-outline-primary btn-block" type="button" value="zoeken" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="sizeOnDisk">Omvang opschijf:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="number" name="sizeOnDisk" min="0" step="1">
+                        </div>
+                        <div class="col align-self-center">
+                            <label for="subs">Ondertitels:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="subs">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="Status">Status:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="Status">
+                        </div>
+                        <div class="col align-self-center">
+                            <label for="nextAirDate">Volgende aflevering:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="date" name="nextAirDate">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="currentSeason">Huidig seiszoen:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="number" name="currentSeason" min="0" step="1">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="actors">Acteurs:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="actors">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="airDate">Uitgezonden:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="date" name="airDate">
+                        </div>
+                        <div class="col align-self-center">
+                            <label for="ratingIMDb">IMDb cijfer:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="number" name="ratingIMDb" min="0" step="0.1">
+                        </div>
+                        <div class="col align-self-center">
+                            <label for="runningTime">Speelduur:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="number" name="runningTime" min="0" step="1">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="locationOnDisk">Pad naar de serie:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="locationOnDisk">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="url">Website:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="url">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col">
+                            <label for="plot">Plot:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <textarea class="form-control" name="plot" cols="15" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <form action="/series/new" method="post">
-            <!-- Title -->
-            <div class="row justify-content-around">
-                <div class="col-sm-3 col-md-3 align-self-center">
-                    <label for="title">Titel van de serie<span class="required">*</span>:</label>
-                </div>
-                <div class="col-sm-8 col-md-8">
-                        <input class="form-control" type="text" name="title" placeholder="Titel van de serie" required>
-                </div>
-                <div class="col-sm-1 col-md-1 d-flex justify-content-end align-self-center">
-                    <div class="form-group">
-                        <input class="btn btn-outline-primary btn-block" type="button" value="zoeken" disabled>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Aanvullende gegevens
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#series">
+                <div class="card-body">
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="director">Regiseur(s):</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="director">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="genre">Genre:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="genre">
+                        </div>
+                        <div class="col align-self-center">
+                            <label for="classification">Classificatie:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="classification">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label for="country">Land:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="country">
+                        </div>
+                        <div class="col align-self-center">
+                            <label for="language">Gesproken taal:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input class="form-control" type="text" name="language">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col">
+                            <label for="personalNotes">Notities:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <textarea class="form-control" name="personalNotes" cols="15" rows="5"></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr>
-            <!-- Actors / Director -->
-            <div class="row justify-content-between">
-                <div class="col align-self-center">
-                    <label for="actors">Acteurs:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="text" name="actors">
-                </div>
-                <div class="col align-self-center">
-                    <label for="director">Regiseur(s):</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="text" name="director">
-                </div>                
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Overigen
+                    </button>
+                </h2>
             </div>
-            <!-- Genre / Subs -->
-            <div class="row justify-content-between">
-                <div class="col align-self-center">
-                    <label for="genre">Genre:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="text" name="genre">
-                </div>
-                <div class="col align-self-center">
-                    <label for="subs">Ondertitels:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="text" name="subs">
-                </div>      
-            </div>
-            <!-- classification / ratingIMDb -->
-            <div class="row justify-content-between">
-                <div class="col align-self-center">
-                    <label for="classification">Classificatie:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="text" name="classification">
-                </div>
-                <div class="col align-self-center">
-                    <label for="ratingIMDb">IMDb cijfer:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="number" name="ratingIMDb" min="0" step="0.1">
-                </div>
-            </div>
-            <!-- country / language -->
-            <div class="row justify-content-between">
-                <div class="col align-self-center">
-                    <label for="country">Land:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="text" name="country">
-                </div>
-                <div class="col align-self-center">
-                    <label for="language">Gesproken taal:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="text" name="language">
-                </div>
-            </div>
-            <!-- runningTime / airDate -->
-            <div class="row justify-content-between">
-                <div class="col align-self-center">
-                    <label for="runningTime">Speelduur:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="number" name="runningTime" min="0" step="1">
-                </div>
-                <div class="col align-self-center">
-                    <label for="airDate">Uitgezonden:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="date" name="airDate">
-                </div>
-            </div>
-            <!-- Status / currentSeason -->
-            <div class="row justify-content-between">
-                <div class="col align-self-center">
-                    <label for="Status">Status:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="text" name="Status">
-                </div>
-                <div class="col align-self-center">
-                    <label for="currentSeason">Huidig seiszoen:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="number" name="currentSeason" min="0" step="1">
-                </div>
-            </div>
-            <!-- nextAirDate / sizeOnDisk -->
-            <div class="row justify-content-between">
-                <div class="col align-self-center">
-                    <label for="nextAirDate">Volgende aflevering:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="date" name="nextAirDate">
-                </div>
-                <div class="col align-self-center">
-                    <label for="sizeOnDisk">Omvang opschijf:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="number" name="sizeOnDisk" min="0" step="1">
-                </div>
-            </div>
-            <!-- locationOnDisk -->
-            <div class="row justify-content-between">
-                <div class="col align-self-center">
-                    <label for="locationOnDisk">Pad naar de serie:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input class="form-control" type="text" name="locationOnDisk">
-                </div>
-            </div>
-            <div class="row justify-content-between">
-                <!-- Registerd in Kodi -->
-                <div class="col-auto align-self-center">
-                    <label for="registredInKodi">In Kodi:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input type="checkbox" name="registredInKodi">
-                </div>                
-                <!-- Seen all episodes -->
-                <div class="col-auto align-self-center">
-                    <label for="seenAllEpisodes">Alles gekeken:</label>
-                </div>
-                <div class="col align-self-center">
-                    <input type="checkbox" name="seenAllEpisodes">
-                </div>
-            </div>
-            <!-- Plot -->
-            <div class="row ">
-                <div class="col">
-                    <label for="plot">Plot:</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <textarea class="form-control" name="plot" cols="15" rows="5"></textarea>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#series">
+                <div class="card-body">
+                    <div class="row justify-content-between">
+                        <!-- Registerd in Kodi -->
+                        <div class="col-auto align-self-center">
+                            <label for="registredInKodi">In Kodi:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input type="checkbox" name="registredInKodi">
+                        </div>
+                        <!-- Seen all episodes -->
+                        <div class="col-auto align-self-center">
+                            <label for="seenAllEpisodes">Alles gekeken:</label>
+                        </div>
+                        <div class="col align-self-center">
+                            <input type="checkbox" name="seenAllEpisodes">
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Legend -->
-            <div class="row">
-                <div class="col d-flex justify-content-end">
-                    <span class="required"><small>*) = verplicht veld</small></span>
-                </div>
-            </div>
-            <!-- Buttons -->
-            <div class="row justify-content-between">
-                <div class="col">
-                    <input class="btn btn-outline-primary btn-sm" type="reset" value="Herstellen">
-                </div>
-                <div class="col d-flex justify-content-end">
-                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Toevoegen">
-                    </div>
-                </div>
-        </form>
+        </div>
+    </div>
+    <!-- Legend -->
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            <span class="required"><small>*) = verplicht veld</small></span>
+        </div>
+    </div>
+    <!-- Buttons -->
+    <div class="row justify-content-between">
+        <div class="col">
+            <input class="btn btn-outline-primary btn-sm" type="reset" value="Herstellen">
+        </div>
+        <div class="col d-flex justify-content-end">
+            <input class="btn btn-outline-primary btn-sm" type="submit" value="Toevoegen">
+        </div>
+    </div>
+</form>
 
 <%- include("../partials/footer") -%>
