@@ -11,9 +11,7 @@
                     <label for="title">Titel van de serie<span class="required">*</span>:</label>
                 </div>
                 <div class="col-sm-8 col-md-8">
-                    <div class="form-group">
                         <input class="form-control" type="text" name="title" placeholder="Titel van de serie" required>
-                    </div>
                 </div>
                 <div class="col-sm-1 col-md-1 d-flex justify-content-end align-self-center">
                     <div class="form-group">
@@ -22,6 +20,120 @@
                 </div>
             </div>
             <hr>
+            <!-- Actors / Director -->
+            <div class="row justify-content-between">
+                <div class="col align-self-center">
+                    <label for="actors">Acteurs:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="text" name="actors">
+                </div>
+                <div class="col align-self-center">
+                    <label for="director">Regiseur(s):</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="text" name="director">
+                </div>                
+            </div>
+            <!-- Genre / Subs -->
+            <div class="row justify-content-between">
+                <div class="col align-self-center">
+                    <label for="genre">Genre:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="text" name="genre">
+                </div>
+                <div class="col align-self-center">
+                    <label for="subs">Ondertitels:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="text" name="subs">
+                </div>      
+            </div>
+            <!-- classification / ratingIMDb -->
+            <div class="row justify-content-between">
+                <div class="col align-self-center">
+                    <label for="classification">Classificatie:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="text" name="classification">
+                </div>
+                <div class="col align-self-center">
+                    <label for="ratingIMDb">IMDb cijfer:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="number" name="ratingIMDb" min="0" step="0.1">
+                </div>
+            </div>
+            <!-- country / language -->
+            <div class="row justify-content-between">
+                <div class="col align-self-center">
+                    <label for="country">Land:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="text" name="country">
+                </div>
+                <div class="col align-self-center">
+                    <label for="language">Gesproken taal:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="text" name="language">
+                </div>
+            </div>
+            <!-- runningTime / airDate -->
+            <div class="row justify-content-between">
+                <div class="col align-self-center">
+                    <label for="runningTime">Speelduur:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="number" name="runningTime" min="0" step="1">
+                </div>
+                <div class="col align-self-center">
+                    <label for="airDate">Uitgezonden:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="date" name="airDate">
+                </div>
+            </div>
+            <!-- Status / currentSeason -->
+            <div class="row justify-content-between">
+                <div class="col align-self-center">
+                    <label for="Status">Status:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="text" name="Status">
+                </div>
+                <div class="col align-self-center">
+                    <label for="currentSeason">Huidig seiszoen:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="number" name="currentSeason" min="0" step="1">
+                </div>
+            </div>
+            <!-- nextAirDate / sizeOnDisk -->
+            <div class="row justify-content-between">
+                <div class="col align-self-center">
+                    <label for="nextAirDate">Volgende aflevering:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="date" name="nextAirDate">
+                </div>
+                <div class="col align-self-center">
+                    <label for="sizeOnDisk">Omvang opschijf:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="number" name="sizeOnDisk" min="0" step="1">
+                </div>
+            </div>
+            <!-- locationOnDisk -->
+            <div class="row justify-content-between">
+                <div class="col align-self-center">
+                    <label for="locationOnDisk">Pad naar de serie:</label>
+                </div>
+                <div class="col align-self-center">
+                    <input class="form-control" type="text" name="locationOnDisk">
+                </div>
+            </div>
             <div class="row justify-content-between">
                 <!-- Registerd in Kodi -->
                 <div class="col-auto align-self-center">
