@@ -6,6 +6,20 @@
 
 <form action="/series/new" method="post">
 
+    <div class="row justify-content-around">
+        <div class="col-sm-3 col-md-3 align-self-center">
+            <label for="title">Titel van de serie<span class="required">*</span>:</label>
+        </div>
+        <div class="col-sm-8 col-md-8">
+            <input class="form-control" type="text" name="title" placeholder="Titel van de serie" required>
+        </div>
+        <div class="col-sm-1 col-md-1 d-flex justify-content-end align-self-center">
+            <div class="form-group">
+                <input class="btn btn-outline-primary btn-block" type="button" value="zoeken" disabled>
+            </div>
+        </div>
+    </div>
+
     <div class="accordion" id="series">
         <div class="card">
             <div class="card-header" id="headingOne">
@@ -18,21 +32,7 @@
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#series">
                 <div class="card-body">
                     <!-- Title -->
-                    <div class="row justify-content-around">
-                        <div class="col-sm-3 col-md-3 align-self-center">
-                            <label for="title">Titel van de serie<span class="required">*</span>:</label>
-                        </div>
-                        <div class="col-sm-8 col-md-8">
-                            <input class="form-control" type="text" name="title" placeholder="Titel van de serie"
-                                required>
-                        </div>
-                        <div class="col-sm-1 col-md-1 d-flex justify-content-end align-self-center">
-                            <div class="form-group">
-                                <input class="btn btn-outline-primary btn-block" type="button" value="zoeken" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <div class="col align-self-center">
                             <label for="sizeOnDisk">Omvang opschijf:</label>
                         </div>
@@ -46,7 +46,7 @@
                             <input class="form-control" type="text" name="subs">
                         </div>
                     </div>
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <div class="col align-self-center">
                             <label for="Status">Status:</label>
                         </div>
@@ -60,23 +60,29 @@
                             <input class="form-control" type="date" name="nextAirDate">
                         </div>
                     </div>
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <div class="col align-self-center">
                             <label for="currentSeason">Huidig seiszoen:</label>
                         </div>
                         <div class="col align-self-center">
                             <input class="form-control" type="number" name="currentSeason" min="0" step="1">
                         </div>
-                    </div>
-                    <div class="row justify-content-between">
                         <div class="col align-self-center">
-                            <label for="actors">Acteurs:</label>
+                            &nbsp;
                         </div>
                         <div class="col align-self-center">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="row form-group justify-content-between">
+                        <div class="col-sm-2 col-md-3 align-self-center">
+                            <label for="actors">Acteurs:</label>
+                        </div>
+                        <div class="col-sm-10 col-md-9 align-self-center">
                             <input class="form-control" type="text" name="actors">
                         </div>
                     </div>
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <div class="col align-self-center">
                             <label for="airDate">Uitgezonden:</label>
                         </div>
@@ -96,7 +102,7 @@
                             <input class="form-control" type="number" name="runningTime" min="0" step="1">
                         </div>
                     </div>
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <div class="col align-self-center">
                             <label for="locationOnDisk">Pad naar de serie:</label>
                         </div>
@@ -104,7 +110,7 @@
                             <input class="form-control" type="text" name="locationOnDisk">
                         </div>
                     </div>
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <div class="col align-self-center">
                             <label for="url">Website:</label>
                         </div>
@@ -112,16 +118,14 @@
                             <input class="form-control" type="text" name="url">
                         </div>
                     </div>
-                    <div class="row ">
+                    <div class="row">
                         <div class="col">
                             <label for="plot">Plot:</label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row form-group">
                         <div class="col">
-                            <div class="form-group">
-                                <textarea class="form-control" name="plot" cols="15" rows="5"></textarea>
-                            </div>
+                            <textarea class="form-control" name="plot" cols="15" rows="5"></textarea>
                         </div>
                     </div>
                 </div>
@@ -137,7 +141,7 @@
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#series">
                 <div class="card-body">
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <div class="col align-self-center">
                             <label for="director">Regiseur(s):</label>
                         </div>
@@ -145,7 +149,7 @@
                             <input class="form-control" type="text" name="director">
                         </div>
                     </div>
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <div class="col align-self-center">
                             <label for="genre">Genre:</label>
                         </div>
@@ -159,7 +163,7 @@
                             <input class="form-control" type="text" name="classification">
                         </div>
                     </div>
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <div class="col align-self-center">
                             <label for="country">Land:</label>
                         </div>
@@ -173,16 +177,14 @@
                             <input class="form-control" type="text" name="language">
                         </div>
                     </div>
-                    <div class="row ">
+                    <div class="row">
                         <div class="col">
                             <label for="personalNotes">Notities:</label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row form-group">
                         <div class="col">
-                            <div class="form-group">
-                                <textarea class="form-control" name="personalNotes" cols="15" rows="5"></textarea>
-                            </div>
+                            <textarea class="form-control" name="personalNotes" cols="15" rows="5"></textarea>
                         </div>
                     </div>
                 </div>
@@ -191,15 +193,14 @@
         <div class="card">
             <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Overigen
                     </button>
                 </h2>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#series">
                 <div class="card-body">
-                    <div class="row justify-content-between">
+                    <div class="row form-group justify-content-between">
                         <!-- Registerd in Kodi -->
                         <div class="col-auto align-self-center">
                             <label for="registredInKodi">In Kodi:</label>
@@ -226,7 +227,7 @@
         </div>
     </div>
     <!-- Buttons -->
-    <div class="row justify-content-between">
+    <div class="row form-group justify-content-between">
         <div class="col">
             <input class="btn btn-outline-primary btn-sm" type="reset" value="Herstellen">
         </div>
