@@ -37,13 +37,17 @@
                             <label for="sizeOnDisk">Omvang opschijf:</label>
                         </div>
                         <div class="col align-self-center">
-                            <input class="form-control" type="number" name="sizeOnDisk" min="0" step="1">
+                            <input class="form-control" type="number" name="sizeOnDisk" min="0" step="1" disabled>
                         </div>
                         <div class="col align-self-center">
                             <label for="subs">Ondertitels:</label>
                         </div>
                         <div class="col align-self-center">
-                            <input class="form-control" type="text" name="subs">
+                            <Select name="subs">
+                                <option value="NL">Nederlands</option>
+                                <option value="EN">Engels</option>
+                                <option value="AN">Ander</option>
+                            </Select>
                         </div>
                     </div>
                     <div class="row form-group justify-content-between">
@@ -51,7 +55,11 @@
                             <label for="Status">Status:</label>
                         </div>
                         <div class="col align-self-center">
-                            <input class="form-control" type="text" name="Status">
+                            <Select name="status">
+                                <option value="Actief">Actief</option>
+                                <option value="Afgelopen">Afgelopen</option>
+                                <option value="OnHold">On Hold</option>
+                            </Select>
                         </div>
                         <div class="col align-self-center">
                             <label for="nextAirDate">Volgende aflevering:</label>
@@ -103,18 +111,21 @@
                         </div>
                     </div>
                     <div class="row form-group justify-content-between">
-                        <div class="col align-self-center">
+                        <div class="col-sm-3 col-md-3 align-self-center">
                             <label for="locationOnDisk">Pad naar de serie:</label>
                         </div>
-                        <div class="col align-self-center">
+                        <div class="col-sm-7 col-md-7 align-self-center">
                             <input class="form-control" type="text" name="locationOnDisk">
+                        </div>
+                        <div class="col-sm-2 col-md-2 d-flex justify-content-end align-self-center">
+                            <input class="btn btn-outline-primary btn-block" type="button" value="zoeken" disabled>
                         </div>
                     </div>
                     <div class="row form-group justify-content-between">
-                        <div class="col align-self-center">
+                        <div class="col-sm-2 col-md-2 align-self-center">
                             <label for="url">Website:</label>
                         </div>
-                        <div class="col align-self-center">
+                        <div class="col-sm-9 col-md-9 align-self-center">
                             <input class="form-control" type="text" name="url">
                         </div>
                     </div>
@@ -142,10 +153,10 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#series">
                 <div class="card-body">
                     <div class="row form-group justify-content-between">
-                        <div class="col align-self-center">
+                        <div class="col-sm-2 col-md-2 align-self-center">
                             <label for="director">Regiseur(s):</label>
                         </div>
-                        <div class="col align-self-center">
+                        <div class="col-sm-9 col-md-9 align-self-center">
                             <input class="form-control" type="text" name="director">
                         </div>
                     </div>
@@ -164,17 +175,27 @@
                         </div>
                     </div>
                     <div class="row form-group justify-content-between">
-                        <div class="col align-self-center">
+                        <div class="col-sm-3 col-md-3 align-self-center">
                             <label for="country">Land:</label>
                         </div>
-                        <div class="col align-self-center">
+                        <div class="col-sm-3 col-md-3 align-self-center">
                             <input class="form-control" type="text" name="country">
                         </div>
-                        <div class="col align-self-center">
+                        <div class="col-sm-3 col-md-3 align-self-center">
                             <label for="language">Gesproken taal:</label>
                         </div>
-                        <div class="col align-self-center">
-                            <input class="form-control" type="text" name="language">
+                        <div class="col-sm-2 col md-2 align-self-center">
+                            <Select name="language">
+                                <option value="Nederlands">Nederlands</option>
+                                <option value="Engels">Engels</option>
+                                <option value="Duits">Duits</option>
+                                <option value="Deens">Deens</option>
+                                <option value="Frans">Frans</option>
+                                <option value="Overig">Overig</option>
+                            </Select>
+                        </div>
+                        <div class="col-sm-1 col-md-1 align-self-center">
+                            <input class="form-control" type="text" name="language" hidden>
                         </div>
                     </div>
                     <div class="row">

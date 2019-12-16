@@ -14,7 +14,7 @@ const serieSchema = new mongoose.Schema({
     language: String,
     runningTime: Number,
     airDate: Date,
-    Status: String,
+    status: String,
     currentSeason: Number,
     nextAirDate: Date,
     sizeOnDisk: Number,
