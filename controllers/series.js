@@ -1,4 +1,8 @@
 
+exports.show = (req,res) => {
+    res.send("Showpage");
+}
+
 // Adding new serie
 let css="../css/main.css"
 exports.new = (req,res) => {
