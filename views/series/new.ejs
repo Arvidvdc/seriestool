@@ -115,10 +115,10 @@
                             <label for="locationOnDisk">Pad naar de serie:</label>
                         </div>
                         <div class="col-sm-7 col-md-7 align-self-center">
-                            <input class="form-control" type="text" name="locationOnDisk">
+                            <input class="form-control" type="file" name="locationOnDisk" ID="locationOnDisk">
                         </div>
                         <div class="col-sm-2 col-md-2 d-flex justify-content-end align-self-center">
-                            <input class="btn btn-outline-primary btn-block" type="button" value="zoeken" disabled>
+                            <input class="btn btn-outline-primary btn-block" type="button" value="zoeken" ID="btnLocation">
                         </div>
                     </div>
                     <div class="row form-group justify-content-between">
@@ -184,8 +184,8 @@
                         <div class="col-sm-3 col-md-3 align-self-center">
                             <label for="language">Gesproken taal:</label>
                         </div>
-                        <div class="col-sm-2 col md-2 align-self-center">
-                            <Select name="language">
+                        <div class="col-sm-1 col md-1 align-self-center">
+                            <Select name="languageDrop" id="languageDrop">
                                 <option value="Nederlands">Nederlands</option>
                                 <option value="Engels">Engels</option>
                                 <option value="Duits">Duits</option>
@@ -194,8 +194,8 @@
                                 <option value="Overig">Overig</option>
                             </Select>
                         </div>
-                        <div class="col-sm-1 col-md-1 align-self-center">
-                            <input class="form-control" type="text" name="language" hidden>
+                        <div class="col-sm-2 col-md-2 align-self-center">
+                            <input class="form-control" type="text" name="language" id="language" hidden>
                         </div>
                     </div>
                     <div class="row">
@@ -257,5 +257,5 @@
         </div>
     </div>
 </form>
-
+<script src="/js/newserie.js"></script>
 <%- include("../partials/footer") -%>
