@@ -1,10 +1,18 @@
+const   Serie    = require("../models/serie"),
+        css      = "../css/main.css";
 
 exports.show = (req,res) => {
-    res.send("Showpage");
+    let path="public/images"
+    Serie.find({title: req.params.id}, (err,foundSerie) => {
+        if(err) {
+            console.log(err)
+        } else {
+            res.render("./series/show", {path: "/images", foundSerie: foundSerie, css: css});
+        };
+    });
 }
 
 // Adding new serie
-let css="../css/main.css"
 exports.new = (req,res) => {
     res.render("./series/new", {page: "addSerie", css: css});
 }

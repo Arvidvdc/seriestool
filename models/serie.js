@@ -23,8 +23,8 @@ const serieSchema = new mongoose.Schema({
     registredInKodi: Boolean,
     searchSubs: Boolean,
     personalNotes: String,
-    DateAdded: Timestamp,
-    DateChanged: Timestamp,
+    DateAdded: String,
+    DateChanged: String,
     owner: {
         id: {
             type: mongoose.Schema.Types.ObjectId,

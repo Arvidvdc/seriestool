@@ -7,7 +7,7 @@
             <% imageList.forEach(image => { %>
                 <div class="col-sm col-md-4">
                     <div class="thumbnail">
-                        <img src="<%= path %>/<%= image %>" alt="<%= image %>">
+                        <img src="<%= path %>/<%= image %>" alt="<%= image %>" id="<%= image %>">
                     </div>
                     <div class="caption">
                         <h5><%= image.split(".j",1) %></h5>
@@ -15,5 +15,5 @@
                 </div>
             <% }); %>
         </div>
-
+<script src="/js/main.js"></script>
 <%- include("../partials/footer") -%>

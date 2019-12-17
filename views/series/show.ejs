@@ -1,0 +1,58 @@
+<%- include("../partials/header") -%>
+
+<div class="module-header">
+    <h4 class="module-title"><%= foundSerie[0].title %></h4>
+</div>
+
+<div class="row justify-content-around">
+    <div class="col-md-8">
+        <div class="accordion" id="series">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Serie details
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#series">
+                    <div class="card-body">
+                        <div class="row form-group justify-content-between">
+                            <div class="col align-self-center">
+                                <label for="sizeOnDisk">Omvang opschijf:</label>
+                            </div>
+                            <div class="col align-self-center">
+                                <input class="form-control" type="number" name="sizeOnDisk" min="0" step="1" disabled>
+                            </div>
+                            <div class="col align-self-center">
+                                <label for="subs">Ondertitels:</label>
+                            </div>
+                            <div class="col align-self-center">
+                                <input class="form-control" type="text" value=<%= foundSerie[0].subs %>>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col align-self-center">
+                                <label for="Status">Status: <%= foundSerie[0].status %></label>
+                            </div>
+                            <div class="col align-self-center">
+                                <input class="form-control" type="text" value=<%= foundSerie[0].status %>>
+                            </div>
+                            <div class="col align-self-center">
+                                <label for="nextAirDate">Volgende aflevering:</label>
+                            </div>
+                            <div class="col align-self-center">
+                                <input class="form-control" type="date" name="nextAirDate" value=<%= foundSerie[0].nextAirDate %>>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end">
+        <img src="<%= path %>/<%= foundSerie[0].title %>.jpg" alt="<%= foundSerie[0].title %>">
+    </div>
+</div>
+
+<%- include("../partials/footer") -%>

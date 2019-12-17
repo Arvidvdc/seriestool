@@ -1,6 +1,7 @@
 // Require dependencies
 const   express         = require("express"),
         app             = express(),
+        mongoose        = require("mongoose"),
         indexRoutes     = require("./routes/index"),
         seriesRoutes    = require("./routes/series");
 
@@ -10,6 +11,16 @@ require('dotenv').config();
 // Express variables
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+
+// Database connection
+mongoose.connect(process.env.DB_URL, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    useFindAndModify: false}).then(
+        () => {
+          console.log('Database is connected') },
+        err => { console.log('Can not connect to the database'+ err)}
+    );
 
 app.use((req,res,next)=>{
     res.locals.currentUser=req.user;
