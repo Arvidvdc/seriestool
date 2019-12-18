@@ -1,7 +1,7 @@
 <%- include("../partials/header") -%>
 
 <div class="module-header">
-    <h4 class="module-title">Edit: <%= foundSerie[0].title %> <%=  foundSerie[0].seenAllEpisodes.toString() == "true" ? 'checked' : '' %></h4>
+    <h4 class="module-title">Edit: <%= foundSerie[0].title %></h4>
 </div>
 <form action="/series/<%= foundSerie[0].title %>?_method=PUT" method="post">
     <div class="row justify-content-around">
