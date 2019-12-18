@@ -13,6 +13,9 @@ hr {
 .thumbnail img {
     width: 100%;
 }
+.thumbnail img:hover{
+    cursor: pointer;
+}
 
 .thumbnail {
     padding: 0;
