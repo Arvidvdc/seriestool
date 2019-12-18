@@ -1,0 +1,230 @@
+<%- include("../partials/header") -%>
+
+<div class="module-header">
+    <h4 class="module-title">Edit: <%= foundSerie[0].title %></h4>
+</div>
+<form action="/series/<%= foundSerie[0].title %>?_method=PUT" method="post">
+    <div class="row justify-content-around">
+        <div class="col-md-8">
+            <div class="accordion" id="series">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Serie details
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#series">
+                        <div class="card-body">
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>Acteurs:</strong>
+                                </div>
+                                <div class="col-md-10 align-self-center">
+                                    <input class="form-control" type="text" name="update[actors]" value="<%= foundSerie[0].actors %>">
+                                </div>
+                            </div>
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>Genres:</strong>
+                                </div>
+                                <div class="col-md-10 align-self-center">
+                                    <input class="form-control" type="text" name="update[genre]" value="<%= foundSerie[0].genre %>">
+                                </div>
+                            </div>
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2">
+                                    <strong>Ondertitels:</strong>
+                                </div>
+                                <div class="col-md-3">
+                                    <Select class="form-control" name="update[subs]">
+                                        <option value="NL" <%= typeof foundSerie[0].subs !== 'undefined' && foundSerie[0].subs === 'NL' ? 'selected' : '' %>>Nederlands</option>
+                                        <option value="EN" <%= typeof foundSerie[0].subs !== 'undefined' && foundSerie[0].subs === 'EN' ? 'selected' : '' %>>Engels</option>
+                                        <option value="AN" <%= typeof foundSerie[0].subs !== 'undefined' && foundSerie[0].subs === 'AN' ? 'selected' : '' %>>Ander</option>
+                                    </Select>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Classificatie:</strong>
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="text" name="update[classification]" value="<%= foundSerie[0].classification %>">
+                                </div>
+                            </div>
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>Status:</strong>
+                                </div>
+                                <div class="col-md-3 align-self-center">
+                                    <Select class="form-control" name="update[status]">
+                                        <option value="Actief" <%= typeof foundSerie[0].status !== 'undefined' && foundSerie[0].status === 'Actief' ? 'selected' : '' %>>Actief</option>
+                                        <option value="Afgelopen" <%= typeof foundSerie[0].status !== 'undefined' && foundSerie[0].status === 'Afgelopen' ? 'selected' : '' %>>Afgelopen</option>
+                                        <option value="On Hold" <%= typeof foundSerie[0].status !== 'undefined' && foundSerie[0].status === 'On Hold' ? 'selected' : '' %>>On Hold</option>
+                                    </Select>
+                                </div>
+                                <div class="col-md-3 align-self-center">
+                                    <strong>Huidig seiszoen:</strong>
+                                </div>
+                                <div class="col-md-4 align-self-center">
+                                    <input class="form-control" type="number" name="update[currentSeason]" min="0" step="1" value="<%= foundSerie[0].currentSeason %>">
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <div class="col align-self-center">
+                                    <strong>Plot:</strong>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <div class="col align-self-center">
+                                    <textarea class="form-control" name="update[plot]" cols="15" rows="3"><%= foundSerie[0].plot %></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Aanvullende gegevens
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#series">
+                        <div class="card-body">
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>Regiseur:</strong>
+                                </div>
+                                <div class="col-md-10 align-self-center">
+                                    <input class="form-control" type="text" name="update[director]" value="<%= foundSerie[0].director %>">
+                                </div>
+                            </div>
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>Jaren:</strong>
+                                </div>
+                                <div class="col-md-3 align-self-center">
+                                    <input class="form-control" type="text" name="update[airDate]" value="<%= foundSerie[0].airDate %>">
+                                </div>
+                                <div class="col-md-2 align-self-center">
+                                    <strong>IMDb:</strong>
+                                </div>
+                                <div class="col-md-2 align-self-center">
+                                    <input class="form-control" type="number" name="update[ratingIMDb]" min="0" step="0.1" value="<%= foundSerie[0].ratingIMDb %>">
+                                </div>
+                                <div class="col-md-2 align-self-center">
+                                    <input class="form-control justify-content-end" type="number" name="update[runningTime]" min="0" step="1" value="<%= foundSerie[0].runningTime %>">
+                                </div>
+                                <div class="col-md-1 align-self-center">
+                                    min
+                                </div>
+                            </div>
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>Herkomst:</strong>
+                                </div>
+                                <div class="col-md-3 align-self-center">
+                                    <input class="form-control" type="text" name="update[country]" value="<%= foundSerie[0].country %>">
+                                </div>
+                                <div class="col-md-3 align-self-center">
+                                    <strong>Gesproken:</strong>
+                                </div>
+                                <div class="col-md-4 align-self-center">
+                                    <Select class="form-control" name="update[language]">
+                                        <option value="Nederlands" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Nederlands' ? 'selected' : '' %>>Nederlands</option>
+                                        <option value="Engels" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Engels' ? 'selected' : '' %>>Engels</option>
+                                        <option value="Duits" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Duits' ? 'selected' : '' %>>Duits</option>
+                                        <option value="Deens" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Deens' ? 'selected' : '' %>>Deens</option>
+                                        <option value="Frans" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Frans' ? 'selected' : '' %>>Frans</option>
+                                        <option value="Overig" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Overig' ? 'selected' : '' %>>Overig</option>
+                                    </Select>
+                                </div>
+                            </div>
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>Website:</strong>
+                                </div>
+                                <div class="col-md-10 align-self-center">
+                                    <input class="form-control" type="text" name="update[url]" value="<%= foundSerie[0].url %>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Persoonlijk
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#series">
+                        <div class="card-body">
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>Pad op schijf:</strong>
+                                </div>
+                                <div class="col-md-10 align-self-center">
+                                    <input class="form-control" type="text" name="update[locationOnDisk]" value="<%= foundSerie[0].locationOnDisk %>">
+                                </div>
+                            </div>
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>Omvang:</strong>
+                                </div>
+                                <div class="col-md-2 align-self-center">
+                                    <input class="form-control" type="number" name="update[sizeOnDisk]" min="0" step="1" value="<%= foundSerie[0].sizeOnDisk %>" >
+                                </div>
+                                <div class="col-md-1 align-self-center">
+                                    GB
+                                </div>
+                                <div class="col-md-3 align-self-center">
+                                    <strong>Volgende:</strong>
+                                </div>
+                                <div class="col-md-4 align-self-center">
+                                    <input class="form-control" type="date" name="update[nextAirDate]" value="<%= foundSerie[0].nextAirDate.slice(-4) %>-<%= foundSerie[0].nextAirDate.split("-",2)[1] %>-<%= foundSerie[0].nextAirDate.slice(0,2) %>">
+                                </div>
+                            </div>
+                            <div class="row form-group justify-content-between">
+                                <div class="col-md-2 align-self-center">
+                                    <strong>In Kodi:</strong>
+                                </div>
+                                <div class="col-md-3 align-self-center">
+                                    <input type="checkbox" name="update[registerdInKodi]" <%=  foundSerie[0].registerdInKodi.toString() == "true" ? 'checked' : '' %>>
+                                </div>
+
+                                <div class="col-md-3 align-self-center">
+                                    <strong>Serie totaal gezien:</strong>
+                                </div>
+                                <div class="col-md-4 align-self-center">
+                                    <input type="checkbox" name="update[seenAllEpisodes]" <%=  foundSerie[0].seenAllEpisodes.toString() == "true" ? 'checked' : '' %>>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <div class="col align-self-center">
+                                    <strong>Persoonlijke notities:</strong>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <div class="col align-self-center">
+                                    <textarea class="form-control" name="update[personalNotes]" cols="15" rows="3"><%= foundSerie[0].personalNotes %></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col d-flex justify-content-end">
+                    <input class="form-control btn btn-dark" type="submit" value="Bijwerken">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-end">
+            <img src="<%= path %>/<%= foundSerie[0].title %>.jpg" alt="<%= foundSerie[0].title %>" width="300" height="460">
+        </div>
+    </div>
+</form>
+<%- include("../partials/footer") -%>
