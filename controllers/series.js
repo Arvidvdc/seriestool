@@ -1,13 +1,13 @@
 const   Serie    = require("../models/serie"),
         css      = "../css/main.css";
 
+// Show route
 exports.show = (req,res) => {
-    let path="public/images"
     Serie.find({title: req.params.id}, (err,foundSerie) => {
         if(err) {
             console.log(err)
         } else {
-            res.render("./series/show", {path: "/images", foundSerie: foundSerie, css: css});
+            res.render("./series/show", {path: "/images", foundSerie: foundSerie, css: css, page: "showPage"});
         };
     });
 }
@@ -19,4 +19,16 @@ exports.new = (req,res) => {
 
 exports.new_post = (req,res) => {
     res.send("Serie toevoegen post.")
+}
+
+// Edit route
+exports.edit = (req,res) => {
+    console.log(req.params.id);
+    Serie.find({title: req.params.id}, (err,foundSerie) => {
+        if(err) {
+            console.log(err)
+        } else {
+            res.render("./series/edit", {path: "/images", foundSerie: foundSerie, css: "../../css/main.css", page: "editPage"});
+        };
+    });
 }
