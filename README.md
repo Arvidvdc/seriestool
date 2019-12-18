@@ -14,6 +14,7 @@ Although this app just saw its first bytes and needs a lot nurturing, but a impr
 ## Features
 ##### 18-12-2019
 * Show page completed.
+* Added update serie.
 
 ##### 11-12-2019
 * Gallery with images from all my collected series.
