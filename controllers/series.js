@@ -1,4 +1,5 @@
 const   Serie    = require("../models/serie"),
+        fs       = require("fs"),
         css      = "../css/main.css";
 
 // Show route
@@ -53,5 +54,20 @@ exports.put = (req,res) => {
         } else {
             res.redirect("/series/" + req.params.id);
         }
+    });
+}
+
+// Destroy route
+exports.delete = (req,res) => {
+    // Remove image from file
+    let file="public/images/" + req.params.id +".jpg";
+    fs.unlink(file, (err) => {
+        if (err) throw err;
+        console.log(file + " was deleted");
+    });
+
+    // Remove serie from database
+    Serie.findOneAndDelete({title: req.params.id}, (err) =>{
+        res.redirect("/");
     });
 }
