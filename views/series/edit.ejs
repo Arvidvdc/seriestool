@@ -18,21 +18,37 @@
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#series">
                     <div class="card-body">
                         <div class="row form-group justify-content-between">
+                            <div class="col-md-2 align-self-center">
+                                <strong>Acteurs:</strong>
+                            </div>
+                            <div class="col-md-10 align-self-center">
+                                <input class="form-control" type="text" name="update[actors]" value="<%= foundSerie[0].actors %>">
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-2 align-self-center">
+                                <strong>Genres:</strong>
+                            </div>
+                            <div class="col-md-10 align-self-center">
+                                <input class="form-control" type="text" name="update[genre]" value="<%= foundSerie[0].genre %>">
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
                             <div class="col-md-2">
-                                <strong>Omvang:</strong>
-                            </div>
-                            <div class="col-md-3">
-                                <input class="form-control" type="number" name="update[sizeOnDisk]" min="0" step="1" value="<%= foundSerie[0].sizeOnDisk %>" >
-                            </div>
-                            <div class="col-md-3">
                                 <strong>Ondertitels:</strong>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <Select class="form-control" name="update[subs]">
                                     <option value="NL" <%= typeof foundSerie[0].subs !== 'undefined' && foundSerie[0].subs === 'NL' ? 'selected' : '' %>>Nederlands</option>
                                     <option value="EN" <%= typeof foundSerie[0].subs !== 'undefined' && foundSerie[0].subs === 'EN' ? 'selected' : '' %>>Engels</option>
                                     <option value="AN" <%= typeof foundSerie[0].subs !== 'undefined' && foundSerie[0].subs === 'AN' ? 'selected' : '' %>>Ander</option>
                                 </Select>
+                            </div>
+                            <div class="col-md-3">
+                                <strong>Classificatie:</strong>
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" name="update[classification]" value="<%= foundSerie[0].classification %>">
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -51,34 +67,6 @@
                             </div>
                             <div class="col-md-4 align-self-center">
                                 <input class="form-control" type="number" name="update[currentSeason]" min="0" step="1" value="<%= foundSerie[0].currentSeason %>">
-                            </div>
-                        </div>
-                        <div class="row form-group justify-content-between">
-                            <div class="col-md-2 align-self-center">
-                                <strong>Acteurs:</strong>
-                            </div>
-                            <div class="col-md-10 align-self-center">
-                                <input class="form-control" type="text" name="update[actors]" value="<%= foundSerie[0].actors %>">
-                            </div>
-                        </div>
-                        <div class="row form-group justify-content-between">
-                            <div class="col-md-2 align-self-center">
-                                <strong>Jaren:</strong>
-                            </div>
-                            <div class="col-md-3 align-self-center">
-                                <input class="form-control" type="text" name="update[airDate]" value="<%= foundSerie[0].airDate %>">
-                            </div>
-                            <div class="col-md-2 align-self-center">
-                                <strong>IMDb:</strong>
-                            </div>
-                            <div class="col-md-2 align-self-center">
-                                <input class="form-control" type="number" name="update[ratingIMDb]" min="0" step="0.1" value="<%= foundSerie[0].ratingIMDb %>">
-                            </div>
-                            <div class="col-md-2 align-self-center">
-                                <input class="form-control justify-content-end" type="number" name="update[runningTime]" min="0" step="1" value="<%= foundSerie[0].runningTime %>">
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                min
                             </div>
                         </div>
                         <div class="row justify-content-between">
@@ -105,41 +93,60 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#series">
                     <div class="card-body">
                         <div class="row form-group justify-content-between">
-                            <div class="col-md-3 align-self-center">
+                            <div class="col-md-2 align-self-center">
                                 <strong>Regiseur:</strong>
                             </div>
-                            <div class="col-md-9 align-self-center">
-                                <%= foundSerie[0].director %>
+                            <div class="col-md-10 align-self-center">
+                                <input class="form-control" type="text" name="update[director]" value="<%= foundSerie[0].director %>">
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
-                            <div class="col-md-3 align-self-center">
-                                <strong>Geproduceerd:</strong>
+                            <div class="col-md-2 align-self-center">
+                                <strong>Jaren:</strong>
                             </div>
                             <div class="col-md-3 align-self-center">
-                                <%= foundSerie[0].country %>
+                                <input class="form-control" type="text" name="update[airDate]" value="<%= foundSerie[0].airDate %>">
+                            </div>
+                            <div class="col-md-2 align-self-center">
+                                <strong>IMDb:</strong>
+                            </div>
+                            <div class="col-md-2 align-self-center">
+                                <input class="form-control" type="number" name="update[ratingIMDb]" min="0" step="0.1" value="<%= foundSerie[0].ratingIMDb %>">
+                            </div>
+                            <div class="col-md-2 align-self-center">
+                                <input class="form-control justify-content-end" type="number" name="update[runningTime]" min="0" step="1" value="<%= foundSerie[0].runningTime %>">
+                            </div>
+                            <div class="col-md-1 align-self-center">
+                                min
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-2 align-self-center">
+                                <strong>Herkomst:</strong>
+                            </div>
+                            <div class="col-md-3 align-self-center">
+                                <input class="form-control" type="text" name="update[country]" value="<%= foundSerie[0].country %>">
                             </div>
                             <div class="col-md-3 align-self-center">
                                 <strong>Gesproken:</strong>
                             </div>
-                            <div class="col-md-3 align-self-center">
-                                <%= foundSerie[0].language %>
+                            <div class="col-md-4 align-self-center">
+                                <Select class="form-control" name="update[language]">
+                                    <option value="Nederlands" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Nederlands' ? 'selected' : '' %>>Nederlands</option>
+                                    <option value="Engels" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Engels' ? 'selected' : '' %>>Engels</option>
+                                    <option value="Duits" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Duits' ? 'selected' : '' %>>Duits</option>
+                                    <option value="Deens" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Deens' ? 'selected' : '' %>>Deens</option>
+                                    <option value="Frans" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Frans' ? 'selected' : '' %>>Frans</option>
+                                    <option value="Overig" <%= typeof foundSerie[0].language !== 'undefined' && foundSerie[0].language === 'Overig' ? 'selected' : '' %>>Overig</option>
+                                </Select>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
-                            <div class="col-md-3 align-self-center">
+                            <div class="col-md-2 align-self-center">
                                 <strong>Website:</strong>
                             </div>
-                            <div class="col-md-9 align-self-center">
-                                <a href="<%= foundSerie[0].url %>" target="_Blank"><%= foundSerie[0].url %></a>
-                            </div>
-                        </div>
-                        <div class="row form-group justify-content-between">
-                            <div class="col-md-3 align-self-center">
-                                <strong>Pad op schijf:</strong>
-                            </div>
-                            <div class="col-md-9 align-self-center">
-                                <%= foundSerie[0].locationOnDisk %>
+                            <div class="col-md-10 align-self-center">
+                                <input class="form-control" type="text" name="update[url]" value="<%= foundSerie[0].url %>">
                             </div>
                         </div>
                     </div>
@@ -156,17 +163,42 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#series">
                     <div class="card-body">
                         <div class="row form-group justify-content-between">
-                            <div class="col-md-3 align-self-center">
-                                <strong>Geregistreerd Kodi:</strong>
+                            <div class="col-md-2 align-self-center">
+                                <strong>Pad op schijf:</strong>
+                            </div>
+                            <div class="col-md-10 align-self-center">
+                                <input class="form-control" type="text" name="update[locationOnDisk]" value="<%= foundSerie[0].locationOnDisk %>">
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-2 align-self-center">
+                                <strong>Omvang:</strong>
+                            </div>
+                            <div class="col-md-2 align-self-center">
+                                <input class="form-control" type="number" name="update[sizeOnDisk]" min="0" step="1" value="<%= foundSerie[0].sizeOnDisk %>" >
+                            </div>
+                            <div class="col-md-1 align-self-center">
+                                GB
                             </div>
                             <div class="col-md-3 align-self-center">
-                                <%= foundSerie[0].registerdInKodi %>
+                                <strong>Volgende:</strong>
+                            </div>
+                            <div class="col-md-4 align-self-center">
+                                <input class="form-control" type="date" name="update[nextAirDate]" value="<%= foundSerie[0].nextAirDate.slice(-4) %>-<%= foundSerie[0].nextAirDate.split("-",2)[1] %>-<%= foundSerie[0].nextAirDate.slice(0,2) %>">
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-2 align-self-center">
+                                <strong>In Kodi:</strong>
+                            </div>
+                            <div class="col-md-3 align-self-center">
+                                <input type="checkbox" name="update[registredInKodi]" <%= typeof foundSerie[0].registerdInKodi !== 'undefined' && foundSerie[0].registerdInKodi ? 'checked' : '' %>>
                             </div>
                             <div class="col-md-3 align-self-center">
                                 <strong>Serie totaal gezien:</strong>
                             </div>
-                            <div class="col-md-3 align-self-center">
-                                <%= foundSerie[0].seenAllEpisodes %>
+                            <div class="col-md-4 align-self-center">
+                                <input type="checkbox" name="update[seenAllEpisodes]" <%= typeof foundSerie[0].seenAllEpisodes !== 'undefined' && foundSerie[0].seenAllEpisodes ? 'checked' : '' %>>
                             </div>
                         </div>
                         <div class="row justify-content-between">
@@ -176,7 +208,7 @@
                         </div>
                         <div class="row justify-content-between">
                             <div class="col align-self-center">
-                                <%= foundSerie[0].personalNotes %>
+                                <textarea class="form-control" name="update[personalNotes]" cols="15" rows="3"><%= foundSerie[0].personalNotes %></textarea>
                             </div>
                         </div>
                     </div>
@@ -185,7 +217,7 @@
         </div>
     </div>
     <div class="col-md-4 d-flex justify-content-end">
-        <img src="<%= path %>/<%= foundSerie[0].title %>.jpg" alt="<%= foundSerie[0].title %>" width="300" height="450">
+        <img src="<%= path %>/<%= foundSerie[0].title %>.jpg" alt="<%= foundSerie[0].title %>" width="300" height="460">
     </div>
 </div>
 
