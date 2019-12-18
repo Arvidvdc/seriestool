@@ -15,34 +15,77 @@
                         </button>
                     </h2>
                 </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#series">
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#series">
                     <div class="card-body">
                         <div class="row form-group justify-content-between">
-                            <div class="col align-self-center">
-                                <label for="sizeOnDisk">Omvang opschijf:</label>
+                            <div class="col">
+                                Omvang:
                             </div>
-                            <div class="col align-self-center">
-                                <input class="form-control" type="number" name="sizeOnDisk" min="0" step="1" disabled>
+                            <div class="col">
+                                <%= foundSerie[0].sizeOnDisk %> GB
                             </div>
-                            <div class="col align-self-center">
-                                <label for="subs">Ondertitels:</label>
+                            <div class="col">
+                                Ondertitels:
                             </div>
-                            <div class="col align-self-center">
-                                <input class="form-control" type="text" value=<%= foundSerie[0].subs %>>
+                            <div class="col">
+                                <% if(foundSerie[0].subs == "NL") { %>
+                                    <%= "Nederlands" %>
+                                <% } else if(foundSerie[0].subs == "EN") { %>
+                                    <%= "Engels" %>
+                                <% } %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
                             <div class="col align-self-center">
-                                <label for="Status">Status: <%= foundSerie[0].status %></label>
+                                Status:
                             </div>
                             <div class="col align-self-center">
-                                <input class="form-control" type="text" value=<%= foundSerie[0].status %>>
+                                <%= foundSerie[0].status %>
                             </div>
                             <div class="col align-self-center">
-                                <label for="nextAirDate">Volgende aflevering:</label>
+                                Huidig seiszoen:
                             </div>
                             <div class="col align-self-center">
-                                <input class="form-control" type="date" name="nextAirDate" value=<%= foundSerie[0].nextAirDate %>>
+                                <%= foundSerie[0].currentSeason %>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-3 align-self-center">
+                                Acteurs:
+                            </div>
+                            <div class="col-md-9 align-self-center">
+                                <%= foundSerie[0].actors %>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="col align-self-center">
+                                Plot:
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="col align-self-center">
+                                <%= foundSerie[0].plot %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Aanvullende gegevens
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#series">
+                    <div class="card-body">
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-3 align-self-center">
+                                Regiseur:
+                            </div>
+                            <div class="col-md-9 align-self-center">
+                                <%= foundSerie[0].director %>
                             </div>
                         </div>
                     </div>
