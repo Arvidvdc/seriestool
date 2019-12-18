@@ -18,16 +18,16 @@
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#series">
                     <div class="card-body">
                         <div class="row form-group justify-content-between">
-                            <div class="col">
-                                Omvang:
+                            <div class="col-md-3">
+                                <strong>Omvang:</strong>
                             </div>
-                            <div class="col">
+                            <div class="col-md-2">
                                 <%= foundSerie[0].sizeOnDisk %> GB
                             </div>
-                            <div class="col">
-                                Ondertitels:
+                            <div class="col-md-3">
+                                <strong>Ondertitels:</strong>
                             </div>
-                            <div class="col">
+                            <div class="col-md-4">
                                 <% if(foundSerie[0].subs == "NL") { %>
                                     <%= "Nederlands" %>
                                 <% } else if(foundSerie[0].subs == "EN") { %>
@@ -36,30 +36,50 @@
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
-                            <div class="col align-self-center">
-                                Status:
+                            <div class="col-md-3 align-self-center">
+                                <strong>Status:</strong>
                             </div>
-                            <div class="col align-self-center">
+                            <div class="col-md-4 align-self-center">
                                 <%= foundSerie[0].status %>
                             </div>
-                            <div class="col align-self-center">
-                                Huidig seiszoen:
+                            <div class="col-md-3 align-self-center">
+                                <strong>Huidig seiszoen:</strong>
                             </div>
-                            <div class="col align-self-center">
+                            <div class="col-md-2 align-self-center">
                                 <%= foundSerie[0].currentSeason %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
                             <div class="col-md-3 align-self-center">
-                                Acteurs:
+                                <strong>Acteurs:</strong>
                             </div>
                             <div class="col-md-9 align-self-center">
                                 <%= foundSerie[0].actors %>
                             </div>
                         </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-3 align-self-center">
+                                <strong>Uitgezonden:</strong>
+                            </div>
+                            <div class="col-md-2 align-self-center">
+                                <%= foundSerie[0].airDate %>
+                            </div>
+                            <div class="col-md-2 align-self-center">
+                                <strong>IMDb cijfer:</strong>
+                            </div>
+                            <div class="col-md-1 align-self-center">
+                                <%= foundSerie[0].ratingIMDb %>
+                            </div>
+                            <div class="col-md-2 align-self-center">
+                                <strong>Speelduur:</strong>
+                            </div>
+                            <div class="col-md-2 align-self-center">
+                                <%= foundSerie[0].runningTime %> minuten
+                            </div>
+                        </div>
                         <div class="row justify-content-between">
                             <div class="col align-self-center">
-                                Plot:
+                                <strong>Plot:</strong>
                             </div>
                         </div>
                         <div class="row justify-content-between">
@@ -82,10 +102,77 @@
                     <div class="card-body">
                         <div class="row form-group justify-content-between">
                             <div class="col-md-3 align-self-center">
-                                Regiseur:
+                                <strong>Regiseur:</strong>
                             </div>
                             <div class="col-md-9 align-self-center">
                                 <%= foundSerie[0].director %>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-3 align-self-center">
+                                <strong>Geproduceerd:</strong>
+                            </div>
+                            <div class="col-md-3 align-self-center">
+                                <%= foundSerie[0].country %>
+                            </div>
+                            <div class="col-md-3 align-self-center">
+                                <strong>Gesproken:</strong>
+                            </div>
+                            <div class="col-md-3 align-self-center">
+                                <%= foundSerie[0].language %>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-3 align-self-center">
+                                <strong>Website:</strong>
+                            </div>
+                            <div class="col-md-9 align-self-center">
+                                <a href="http://<%= foundSerie[0].url %>" target="_Blank"><%= foundSerie[0].url %></a>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-3 align-self-center">
+                                <strong>Pad op schijf:</strong>
+                            </div>
+                            <div class="col-md-9 align-self-center">
+                                <%= foundSerie[0].locationOnDisk %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Persoonlijk
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#series">
+                    <div class="card-body">
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-3 align-self-center">
+                                <strong>Geregistreerd Kodi:</strong>
+                            </div>
+                            <div class="col-md-3 align-self-center">
+                                <%= foundSerie[0].registerdInKodi %>
+                            </div>
+                            <div class="col-md-3 align-self-center">
+                                <strong>Serie totaal gezien:</strong>
+                            </div>
+                            <div class="col-md-3 align-self-center">
+                                <%= foundSerie[0].seenAllEpisodes %>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="col align-self-center">
+                                <strong>Persoonlijke notities:</strong>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="col align-self-center">
+                                <%= foundSerie[0].personalNotes %>
                             </div>
                         </div>
                     </div>
