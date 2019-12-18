@@ -14,6 +14,7 @@ Although this app just saw its first bytes and needs a lot nurturing, but a impr
 ## Features
 ##### xx-12-2019
 * Added update serie.
+* Added delete serie.
 
 ##### 18-12-2019
 * Show page completed.
