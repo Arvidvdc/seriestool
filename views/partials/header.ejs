@@ -35,8 +35,6 @@
                         <form class="delete-form" action="/series/<%= foundSerie[0].title %>?_method=DELETE" method="POST">
                             <button class="dropdown-item <%= typeof page !== 'undefined' && page === 'editPage' ? 'disabled' : '' %>">Verwijderen</button>
                         </form>                        
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item disabled" href="#">Something else here</a>
                     </div>
                 </li>
                 <% } %>
