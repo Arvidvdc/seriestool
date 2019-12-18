@@ -23,7 +23,6 @@ exports.new_post = (req,res) => {
 
 // Edit route
 exports.edit = (req,res) => {
-    console.log(req.params.id);
     Serie.find({title: req.params.id}, (err,foundSerie) => {
         if(err) {
             console.log(err)
