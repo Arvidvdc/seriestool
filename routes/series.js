@@ -11,5 +11,8 @@ router.get("/:id", series_controller.show);
 // Edit route
 router.get("/:id/edit", series_controller.edit);
 
+// Update route
+router.put("/:id", series_controller.put);
+
 // Export router
 module.exports = router;

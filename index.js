@@ -1,7 +1,9 @@
 // Require dependencies
 const   express         = require("express"),
         app             = express(),
+        bodyParser      = require("body-parser"),
         mongoose        = require("mongoose"),
+        methodOverride  = require("method-override"),
         indexRoutes     = require("./routes/index"),
         seriesRoutes    = require("./routes/series");
 
@@ -9,8 +11,10 @@ const   express         = require("express"),
 require('dotenv').config();
 
 // Express variables
+app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
 
 // Database connection
 mongoose.connect(process.env.DB_URL, { 
