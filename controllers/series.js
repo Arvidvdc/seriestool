@@ -68,7 +68,6 @@ exports.delete = (req,res) => {
     let file="public/images/" + req.params.id +".jpg";
     fs.unlink(file, (err) => {
         if (err) throw err;
-        console.log(file + " was deleted");
         req.flash("success", req.params.id + ".jpg" + " is verwijderd." );
     });
 
