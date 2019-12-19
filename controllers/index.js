@@ -8,7 +8,7 @@ exports.default = (req,res)=>{
         if(!err){
             res.render("./default/home",{path: "/images", imageList: imageList, page: "home", css: "css/main.css", buttons: "css/buttons.css"});
         } else {
-            console.log("Error");
+            req.flash("error", "Error while loading images." + err.message);
             res.send("Error" + err)
         }
     });
