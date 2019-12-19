@@ -184,7 +184,7 @@
                                     <strong>Volgende:</strong>
                                 </div>
                                 <div class="col-md-4 align-self-center">
-                                    <input class="form-control" type="date" name="update[nextAirDate]" value="<%= foundSerie.nextAirDate.split("-")[0] %>-<%= foundSerie.nextAirDate.split("-")[1] %>-<%= foundSerie.nextAirDate.split("-")[2] %>">
+                                    <input class="form-control" type="date" name="update[nextAirDate]" value="<%= typeof foundSerie.nextAirDate !== 'undefined' ? foundSerie.nextAirDate.split("-")[2] - foundSerie.nextAirDate.split("-")[1] - foundSerie.nextAirDate.split("-")[0] : "" %>">
                                 </div>
                             </div>
                             <div class="row form-group justify-content-between">
@@ -192,14 +192,14 @@
                                     <strong>In Kodi:</strong>
                                 </div>
                                 <div class="col-md-3 align-self-center">
-                                    <input type="checkbox" name="update[registerdInKodi]" <%=  foundSerie.registerdInKodi.toString() == "true" ? 'checked' : '' %>>
+                                    <input type="checkbox" name="update[registerdInKodi]" <%= typeof  foundSerie.registerdInKodi !== 'undefined' && foundSerie.registerdInKodi.toString() == "true" ? 'checked' : '' %>>
                                 </div>
 
                                 <div class="col-md-3 align-self-center">
                                     <strong>Serie totaal gezien:</strong>
                                 </div>
                                 <div class="col-md-4 align-self-center">
-                                    <input type="checkbox" name="update[seenAllEpisodes]" <%=  foundSerie.seenAllEpisodes.toString() == "true" ? 'checked' : '' %>>
+                                    <input type="checkbox" name="update[seenAllEpisodes]" <%= typeof  foundSerie.seenAllEpisodes !== 'undefined' && foundSerie.seenAllEpisodes.toString() == "true" ? 'checked' : '' %>>
                                 </div>
                             </div>
                             <div class="row justify-content-between">
