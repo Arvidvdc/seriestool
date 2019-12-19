@@ -1,6 +1,7 @@
 const   Serie    = require("../models/serie"),
         fs       = require("fs"),
-        css      = "../css/main.css";
+        css      = "../css/main.css",
+        buttons  = "../css/buttons.css";
 
 // Show route
 exports.show = (req,res) => {
@@ -9,7 +10,7 @@ exports.show = (req,res) => {
             console.log("No document");
             res.redirect("/");
         } else {
-            res.render("./series/show", {path: "/images", foundSerie: foundSerie, css: css, page: "showPage"});
+            res.render("./series/show", {path: "/images", foundSerie: foundSerie, css: css, buttons: buttons, page: "showPage"});
         }
     });
     
@@ -31,7 +32,7 @@ exports.edit = (req,res) => {
             console.log("Edit route: No document");
             res.redirect("back");
         } else {
-            res.render("./series/edit", {path: "/images", foundSerie: foundSerie, css: "../../css/main.css", page: "editPage"});
+            res.render("./series/edit", {path: "/images", foundSerie: foundSerie, css: "../../css/main.css", buttons: "../../css/buttons.css", page: "editPage"});
         }
     });
 }
