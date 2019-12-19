@@ -16,6 +16,7 @@ Although this app just saw its first bytes and needs a lot nurturing, but a impr
 * Added update serie.
 * Added delete serie.
 * Added buttons for navigation.
+* Added messaging for feedback to user.
 * Update layout showpage.
 * BugFix(es):
     * mongodb find does NOT throw an error when document NOT found.
