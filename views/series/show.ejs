@@ -175,7 +175,9 @@
                                 <strong>Volgende:</strong>
                             </div>
                             <div class="col-md-4 align-self-center">
-                                <%= foundSerie.nextAirDate.slice(-4) %>-<%= foundSerie.nextAirDate.split("-",2)[1] %>-<%= foundSerie.nextAirDate.slice(0,2) %>
+                                
+                                <%= typeof foundSerie.nextAirDate !== 'undefined' ? foundSerie.nextAirDate.split("-")[2] - foundSerie.nextAirDate.split("-")[1] - foundSerie.nextAirDate.split("-")[0] : "" %>
+
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -183,14 +185,13 @@
                                 <strong>In Kodi:</strong>
                             </div>
                             <div class="col-md-3 align-self-center">
-                                <%=  foundSerie.registerdInKodi.toString() == "true" ? 'Correct' : '' %>
+                                <%= typeof  foundSerie.registerdInKodi !== 'undefined' && foundSerie.registerdInKodi.toString() == "true" ? 'Correct' : '' %>
                             </div>
-
                             <div class="col-md-3 align-self-center">
                                 <strong>Serie totaal gezien:</strong>
                             </div>
                             <div class="col-md-4 align-self-center">
-                                <%=  foundSerie.seenAllEpisodes.toString() == "true" ? 'Correct' : '' %>
+                                <%= typeof  foundSerie.seenAllEpisodes !== 'undefined' && foundSerie.seenAllEpisodes.toString() == "true" ? 'Correct' : '' %>
                             </div>
                         </div>
                         <div class="row justify-content-between">
