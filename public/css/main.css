@@ -58,3 +58,22 @@ hr {
 .required {
     color: red;
 }
+
+/* Flash-messages */
+.messageError {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 0 10px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.messageSuccess {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 0 10px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}

@@ -42,6 +42,16 @@
             </ul>
 
             <span class="nav-item <%= typeof page !== 'undefined' && page === 'registreren' ? 'active' : '' %>"><a class="nav-link" href="#">Registreren</a></span>
+            <% if(error && error.length>0) { %>
+                <div class="user messageError">
+                    <%= error %>
+                </div>
+                <% } %>
+                <% if(success && success.length>0) { %>
+                <div class="user messageSuccess">
+                    <%= success %>
+                </div>
+                <% } %>
         </div>
     </nav>
     <div class="container">
