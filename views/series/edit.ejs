@@ -184,7 +184,7 @@
                                     <strong>Volgende:</strong>
                                 </div>
                                 <div class="col-md-4 align-self-center">
-                                    <input class="form-control" type="date" name="update[nextAirDate]" value="<%= foundSerie.nextAirDate.slice(-4) %>-<%= foundSerie.nextAirDate.split("-",2)[1] %>-<%= foundSerie.nextAirDate.slice(0,2) %>">
+                                    <input class="form-control" type="date" name="update[nextAirDate]" value="<%= foundSerie.nextAirDate.split("-")[0] %>-<%= foundSerie.nextAirDate.split("-")[1] %>-<%= foundSerie.nextAirDate.split("-")[2] %>">
                                 </div>
                             </div>
                             <div class="row form-group justify-content-between">
