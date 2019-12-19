@@ -26,12 +26,13 @@ exports.new_post = (req,res) => {
 
 // Edit route
 exports.edit = (req,res) => {
-    Serie.find({title: req.params.id}, (err,foundSerie) => {
-        if(err) {
-            console.log(err);
+    Serie.findOne({title: req.params.id}, (err,foundSerie) => {
+        if(foundSerie===null) {
+            console.log("Edit route: No document");
+            res.redirect("back");
         } else {
             res.render("./series/edit", {path: "/images", foundSerie: foundSerie, css: "../../css/main.css", page: "editPage"});
-        };
+        }
     });
 }
 
