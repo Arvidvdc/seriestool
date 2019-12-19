@@ -7,7 +7,7 @@ const   Serie    = require("../models/serie"),
 exports.show = (req,res) => {
     Serie.findOne({title: req.params.id}, (err,foundSerie) => {
         if(foundSerie===null) {
-            console.log("No document");
+            req.flash("error", "Bijhorend record in database niet gevonden.");
             res.redirect("/");
         } else {
             res.render("./series/show", {path: "/images", foundSerie: foundSerie, css: css, buttons: buttons, page: "showPage"});
@@ -29,7 +29,7 @@ exports.new_post = (req,res) => {
 exports.edit = (req,res) => {
     Serie.findOne({title: req.params.id}, (err,foundSerie) => {
         if(foundSerie===null) {
-            console.log("Edit route: No document");
+            req.flash("error", "Bijhorend record in database niet gevonden.");
             res.redirect("back");
         } else {
             res.render("./series/edit", {path: "/images", foundSerie: foundSerie, css: "../../css/main.css", buttons: "../../css/buttons.css", page: "editPage"});
@@ -53,9 +53,10 @@ exports.put = (req,res) => {
     // Update record
     Serie.findOneAndUpdate({title: req.params.id}, req.body.update, (err, foundSerie)=>{
         if(err) {
-            console.log(err.message);
+            req.flash("error", "Record niet opgeslagen." + err.message);
             res.redirect("/series/" + req.params.id + "/edit");
         } else {
+            req.flash("success", "Record is opgeslagen.");
             res.redirect("/series/" + req.params.id);
         }
     });
@@ -68,10 +69,16 @@ exports.delete = (req,res) => {
     fs.unlink(file, (err) => {
         if (err) throw err;
         console.log(file + " was deleted");
+        req.flash("success", req.params.id + ".jpg" + " is verwijderd." );
     });
 
     // Remove serie from database
     Serie.findOneAndDelete({title: req.params.id}, (err) =>{
-        res.redirect("/");
+        if(err) {
+            req.flash("error", "Record niet verwijderd." + err.message);
+        } else {
+            req.flash("success", req.params.id + " is verwijderd." );
+            res.redirect("/");
+        }
     });
 }
