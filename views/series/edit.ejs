@@ -164,7 +164,7 @@
                         <div class="card-body">
                             <div class="row form-group justify-content-between">
                                 <div class="col-md-2 align-self-center">
-                                    <strong>Pad op schijf:</strong>
+                                    <strong>Locatie:</strong>
                                 </div>
                                 <div class="col-md-10 align-self-center">
                                     <input class="form-control" type="text" name="update[locationOnDisk]" value="<%= foundSerie.locationOnDisk %>">
@@ -217,8 +217,14 @@
                 </div>
             </div>
             <div class="row form-group">
-                <div class="col d-flex justify-content-end">
-                    <input class="form-control btn btn-dark" type="submit" value="Bijwerken">
+                <div class="col">
+                    <a class="form-control  but but-deep-brown" href="/series/<%= foundSerie.title %>">Terug</a>
+                </div>
+                <div class="col">
+                    <input class="form-control  but but-deep-brown" type="reset" value="Herstellen">
+                </div>
+                <div class="col">
+                    <input class="form-control  but but-deep-brown" type="submit" value="Bijwerken">
                 </div>
             </div>
         </div>
