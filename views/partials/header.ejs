@@ -31,8 +31,8 @@
                         Serie Opties
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item <%= typeof page !== 'undefined' && page === 'editPage' ? 'active' : '' %>" href="/series/<%= foundSerie[0].title %>/edit">Edit</a>
-                        <form class="delete-form" action="/series/<%= foundSerie[0].title %>?_method=DELETE" method="POST">
+                        <a class="dropdown-item <%= typeof page !== 'undefined' && page === 'editPage' ? 'active' : '' %>" href="/series/<%= foundSerie.title %>/edit">Edit</a>
+                        <form class="delete-form" action="/series/<%= foundSerie.title %>?_method=DELETE" method="POST">
                             <button class="dropdown-item <%= typeof page !== 'undefined' && page === 'editPage' ? 'disabled' : '' %>">Verwijderen</button>
                         </form>                        
                     </div>

@@ -1,7 +1,7 @@
 <%- include("../partials/header") -%>
 
 <div class="module-header">
-    <h4 class="module-title"><%= foundSerie[0].title %></h4>
+    <h4 class="module-title"><%= foundSerie.title %></h4>
 </div>
 
 <div class="row justify-content-around">
@@ -22,7 +22,7 @@
                                 <strong>Acteurs:</strong>
                             </div>
                             <div class="col-md-10 align-self-center">
-                                <%= foundSerie[0].actors %>
+                                <%= foundSerie.actors %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -30,7 +30,7 @@
                                 <strong>Genres:</strong>
                             </div>
                             <div class="col-md-10 align-self-center">
-                                <%= foundSerie[0].genre %>
+                                <%= foundSerie.genre %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -38,9 +38,9 @@
                                 <strong>Ondertitels:</strong>
                             </div>
                             <div class="col-md-3">
-                                <% if(foundSerie[0].subs == "NL") { %>
+                                <% if(foundSerie.subs == "NL") { %>
                                     Nederlands
-                                <% } else if(foundSerie[0].subs == "EN") { %>
+                                <% } else if(foundSerie.subs == "EN") { %>
                                     Engels
                                 <% } else { %>
                                     Ander
@@ -50,7 +50,7 @@
                                 <strong>Classificatie:</strong>
                             </div>
                             <div class="col-md-4">
-                                <%= foundSerie[0].classification %>
+                                <%= foundSerie.classification %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -58,13 +58,13 @@
                                 <strong>Status:</strong>
                             </div>
                             <div class="col-md-3 align-self-center">
-                                <%= foundSerie[0].status %>
+                                <%= foundSerie.status %>
                             </div>
                             <div class="col-md-3 align-self-center">
                                 <strong>Huidig seiszoen:</strong>
                             </div>
                             <div class="col-md-4 align-self-center">
-                                <%= foundSerie[0].currentSeason %>
+                                <%= foundSerie.currentSeason %>
                             </div>
                         </div>
                         <div class="row justify-content-between">
@@ -74,7 +74,7 @@
                         </div>
                         <div class="row justify-content-between">
                             <div class="col align-self-center">
-                                <%= foundSerie[0].plot %>
+                                <%= foundSerie.plot %>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                                 <strong>Regiseur:</strong>
                             </div>
                             <div class="col-md-10 align-self-center">
-                                <%= foundSerie[0].director %>
+                                <%= foundSerie.director %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -103,19 +103,19 @@
                                 <strong>Jaren:</strong>
                             </div>
                             <div class="col-md-3 align-self-center">
-                                <<%= foundSerie[0].airDate %>
+                                <<%= foundSerie.airDate %>
                             </div>
                             <div class="col-md-2 align-self-center">
                                 <strong>IMDb:</strong>
                             </div>
                             <div class="col-md-1 align-self-center">
-                                <%= foundSerie[0].ratingIMDb %>
+                                <%= foundSerie.ratingIMDb %>
                             </div>
                             <div class="col-md-2 align-self-center">
                                <strong>Speelduur:</strong>
                             </div>
                             <div class="col-md-2 align-self-center">
-                                <%= foundSerie[0].runningTime %> min
+                                <%= foundSerie.runningTime %> min
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -123,13 +123,13 @@
                                 <strong>Herkomst:</strong>
                             </div>
                             <div class="col-md-3 align-self-center">
-                                <%= foundSerie[0].country %>
+                                <%= foundSerie.country %>
                             </div>
                             <div class="col-md-3 align-self-center">
                                 <strong>Gesproken:</strong>
                             </div>
                             <div class="col-md-4 align-self-center">
-                                <%= foundSerie[0].language %>
+                                <%= foundSerie.language %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -137,7 +137,7 @@
                                 <strong>Website:</strong>
                             </div>
                             <div class="col-md-10 align-self-center">
-                                <a href="<%= foundSerie[0].url %>" target="_Blank"><%= foundSerie[0].url %></a>
+                                <a href="<%= foundSerie.url %>" target="_Blank"><%= foundSerie.url %></a>
                             </div>
                         </div>
                     </div>
@@ -158,7 +158,7 @@
                                 <strong>Pad op schijf:</strong>
                             </div>
                             <div class="col-md-10 align-self-center">
-                                <%= foundSerie[0].locationOnDisk %>
+                                <%= foundSerie.locationOnDisk %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -166,7 +166,7 @@
                                 <strong>Omvang:</strong>
                             </div>
                             <div class="col-md-2 align-self-center">
-                                <%= foundSerie[0].sizeOnDisk %>
+                                <%= foundSerie.sizeOnDisk %>
                             </div>
                             <div class="col-md-1 align-self-center">
                                 GB
@@ -175,7 +175,7 @@
                                 <strong>Volgende:</strong>
                             </div>
                             <div class="col-md-4 align-self-center">
-                                <%= foundSerie[0].nextAirDate.slice(-4) %>-<%= foundSerie[0].nextAirDate.split("-",2)[1] %>-<%= foundSerie[0].nextAirDate.slice(0,2) %>
+                                <%= foundSerie.nextAirDate.slice(-4) %>-<%= foundSerie.nextAirDate.split("-",2)[1] %>-<%= foundSerie.nextAirDate.slice(0,2) %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">
@@ -183,14 +183,14 @@
                                 <strong>In Kodi:</strong>
                             </div>
                             <div class="col-md-3 align-self-center">
-                                <%=  foundSerie[0].registerdInKodi.toString() == "true" ? 'Correct' : '' %>
+                                <%=  foundSerie.registerdInKodi.toString() == "true" ? 'Correct' : '' %>
                             </div>
 
                             <div class="col-md-3 align-self-center">
                                 <strong>Serie totaal gezien:</strong>
                             </div>
                             <div class="col-md-4 align-self-center">
-                                <%=  foundSerie[0].seenAllEpisodes.toString() == "true" ? 'Correct' : '' %>
+                                <%=  foundSerie.seenAllEpisodes.toString() == "true" ? 'Correct' : '' %>
                             </div>
                         </div>
                         <div class="row justify-content-between">
@@ -200,7 +200,7 @@
                         </div>
                         <div class="row justify-content-between">
                             <div class="col align-self-center">
-                                <%= foundSerie[0].personalNotes %>
+                                <%= foundSerie.personalNotes %>
                             </div>
                         </div>
                     </div>
@@ -209,7 +209,7 @@
         </div>
     </div>
     <div class="col-md-4 d-flex justify-content-end">
-        <img src="<%= path %>/<%= foundSerie[0].title %>.jpg" alt="<%= foundSerie[0].title %>" width="300" height="460">
+        <img src="<%= path %>/<%= foundSerie.title %>.jpg" alt="<%= foundSerie.title %>" width="300" height="460">
     </div>
 </div>
 
