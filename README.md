@@ -22,6 +22,7 @@ Although this app just saw its first bytes and needs a lot nurturing, but a impr
     * mongodb find does NOT throw an error when document NOT found.
     * visuable typo on showpage.
     * some empty db values on show and edit page fixed.
+    * date display on show and edit page.
 
 ##### 18-12-2019
 * Show page completed.
