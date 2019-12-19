@@ -3,5 +3,5 @@ const   Serie    = require("../models/serie"),
 
 // Seeds route
 exports.seed = (req,res) => {
-    res.send("Seeder route awaiting commands");
+    res.render("./operations/seed", {css: "../../css/main.css", buttons: "../../css/buttons.css", menu: "operations", page: "seedsPage"});
 }

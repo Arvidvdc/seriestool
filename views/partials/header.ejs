@@ -39,6 +39,16 @@
                     </div>
                 </li>
                 <% } %>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <%= typeof menu !== 'undefined' && menu === 'operations' ? 'active' : '' %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Operations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item <%= typeof page !== 'undefined' && page === 'seedsPage' ? 'active' : '' %>" href="/ops/seed">Seeder</a>
+                    </div>
+                </li>
+
             </ul>
 
             <span class="nav-item <%= typeof page !== 'undefined' && page === 'registreren' ? 'active' : '' %>"><a class="nav-link" href="#">Registreren</a></span>
