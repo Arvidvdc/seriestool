@@ -12,7 +12,7 @@ Supported by Bootstrap v. 4.4.1 and jQuery v 3.4.1.
 Although this app just saw its first bytes and needs a lot nurturing, but a impression is [here](http://85.150.72.244:3666) available.
 
 ## Features
-##### xx-12-2019
+##### 19-12-2019
 * Added update serie.
 * Added delete serie.
 * Added buttons for navigation.
