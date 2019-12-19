@@ -26,9 +26,9 @@
                 <li class="nav-item  <%= typeof page !== 'undefined' && page === 'home' ? 'active' : '' %>">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <% if(page !== undefined && page === "showPage" || page === "editPage") { %>
+                <% if(menu !== undefined && menu === "serie") { %>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <%= typeof page !== 'undefined' && page === 'showPage' ? 'active' : '' %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle <%= typeof menu !== 'undefined' && menu === 'serie' ? 'active' : '' %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Serie Opties
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -10,7 +10,7 @@ exports.show = (req,res) => {
             req.flash("error", "Bijhorend record in database niet gevonden.");
             res.redirect("/");
         } else {
-            res.render("./series/show", {path: "/images", foundSerie: foundSerie, css: css, buttons: buttons, page: "showPage"});
+            res.render("./series/show", {path: "/images", foundSerie: foundSerie, css: css, buttons: buttons, menu: "serie", page: "showPage"});
         }
     });
     
@@ -18,7 +18,7 @@ exports.show = (req,res) => {
 
 // Adding new serie
 exports.new = (req,res) => {
-    res.render("./series/new", {page: "addSerie", css: css});
+    res.render("./series/new", {page: "addSerie", css: css, menu: "serie"});
 }
 
 exports.new_post = (req,res) => {
@@ -32,7 +32,7 @@ exports.edit = (req,res) => {
             req.flash("error", "Bijhorend record in database niet gevonden.");
             res.redirect("back");
         } else {
-            res.render("./series/edit", {path: "/images", foundSerie: foundSerie, css: "../../css/main.css", buttons: "../../css/buttons.css", page: "editPage"});
+            res.render("./series/edit", {path: "/images", foundSerie: foundSerie, css: "../../css/main.css", buttons: "../../css/buttons.css", menu: "serie", page: "editPage"});
         }
     });
 }
