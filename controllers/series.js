@@ -4,13 +4,15 @@ const   Serie    = require("../models/serie"),
 
 // Show route
 exports.show = (req,res) => {
-    Serie.find({title: req.params.id}, (err,foundSerie) => {
-        if(err) {
-            console.log(err)
+    Serie.findOne({title: req.params.id}, (err,foundSerie) => {
+        if(foundSerie===null) {
+            console.log("No document");
+            res.redirect("/");
         } else {
             res.render("./series/show", {path: "/images", foundSerie: foundSerie, css: css, page: "showPage"});
-        };
+        }
     });
+    
 }
 
 // Adding new serie
