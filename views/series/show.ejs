@@ -175,9 +175,7 @@
                                 <strong>Volgende:</strong>
                             </div>
                             <div class="col-md-4 align-self-center">
-                                
-                                <%= typeof foundSerie.nextAirDate !== 'undefined' ? foundSerie.nextAirDate.split("-")[2] - foundSerie.nextAirDate.split("-")[1] - foundSerie.nextAirDate.split("-")[0] : "" %>
-
+                                <%= typeof foundSerie.nextAirDate !== 'undefined' ? foundSerie.nextAirDate.split("-")[2] +"-" +foundSerie.nextAirDate.split("-")[1] +"-" +foundSerie.nextAirDate.split("-")[0] : "" %>
                             </div>
                         </div>
                         <div class="row form-group justify-content-between">

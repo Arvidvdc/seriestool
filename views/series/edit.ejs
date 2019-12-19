@@ -184,7 +184,7 @@
                                     <strong>Volgende:</strong>
                                 </div>
                                 <div class="col-md-4 align-self-center">
-                                    <input class="form-control" type="date" name="update[nextAirDate]" value="<%= typeof foundSerie.nextAirDate !== 'undefined' ? foundSerie.nextAirDate.split("-")[2] - foundSerie.nextAirDate.split("-")[1] - foundSerie.nextAirDate.split("-")[0] : "" %>">
+                                    <input class="form-control" type="date" name="update[nextAirDate]" value="<%= typeof foundSerie.nextAirDate !== 'undefined' ? foundSerie.nextAirDate.split("-")[0] +"-" +foundSerie.nextAirDate.split("-")[1] +"-" +foundSerie.nextAirDate.split("-")[2] : "" %>">
                                 </div>
                             </div>
                             <div class="row form-group justify-content-between">
