@@ -15,7 +15,7 @@ router.get("/:id/edit", series_controller.edit);
 router.put("/:id", series_controller.put);
 
 // Destroy route
-router.delete("/:id", series_controller.delete)
+router.delete("/:id", series_controller.delete);
 
 // Export router
 module.exports = router;

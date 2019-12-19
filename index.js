@@ -1,12 +1,13 @@
 // Require dependencies
-const   express         = require("express"),
-        app             = express(),
-        bodyParser      = require("body-parser"),
-        flash           = require("connect-flash"),
-        mongoose        = require("mongoose"),
-        methodOverride  = require("method-override"),
-        indexRoutes     = require("./routes/index"),
-        seriesRoutes    = require("./routes/series");
+const   express             = require("express"),
+        app                 = express(),
+        bodyParser          = require("body-parser"),
+        flash               = require("connect-flash"),
+        mongoose            = require("mongoose"),
+        methodOverride      = require("method-override"),
+        indexRoutes         = require("./routes/index"),
+        seriesRoutes        = require("./routes/series"),
+        operationsRoutes    = require("./routes/operations");
 
 // dotENV
 require('dotenv').config();
@@ -42,6 +43,7 @@ app.use((req,res,next)=>{
 // Routes
 app.use(indexRoutes);
 app.use("/series", seriesRoutes);
+app.use("/ops", operationsRoutes);
 
 // Listener
 app.listen(process.env.APP_PORT, process.env.APP_IP, ()=>console.log("SeriesTool started on " + process.env.APP_IP + " port " + process.env.APP_PORT));
