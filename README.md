@@ -16,6 +16,8 @@ Although this app just saw its first bytes and needs a lot nurturing, but a impr
 * Added update serie.
 * Added delete serie.
 * Update layout showpage.
+* BugFix(es):
+    * mongodb find does NOT throw an error when document NOT found.
 
 ##### 18-12-2019
 * Show page completed.
