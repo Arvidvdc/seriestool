@@ -7,7 +7,7 @@ exports.default = (req,res)=>{
         fs.readdir(path,(err,imageList)=> {
         if(!err){
             req.flash("success", "Welkom!");
-            res.render("./default/home",{path: "/images", imageList: imageList, page: "home", css: "css/main.css", buttons: "css/buttons.css"});
+            res.render("./default/home",{path: "/images", imageList: imageList,menu: "root", page: "home", css: "css/main.css", buttons: "css/buttons.css"});
         } else {
             req.flash("error", "Error while loading images." + err.message);
             res.send("Error" + err)
